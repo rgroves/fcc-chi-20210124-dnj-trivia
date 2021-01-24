@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <title>DNJ Trivia</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="game-board">
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #1</div>
+        <a class="display-screen clue" href="#"><span>$100</span></a>
+        <a class="display-screen clue completed" href="#"><span>$200</span></a>
+        <a class="display-screen clue" href="#"><span>$300</span></a>
+        <a class="display-screen clue" href="#"><span>$400</span></a>
+        <a class="display-screen clue" href="#"><span>$500</span></a>
+      </div>
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #2</div>
+        <a class="display-screen clue" href="#">$100</a>
+        <a class="display-screen clue" href="#">$200</a>
+        <a class="display-screen clue" href="#">$300</a>
+        <a class="display-screen clue" href="#">$400</a>
+        <a class="display-screen clue" href="#">$500</a>
+      </div>
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #3</div>
+        <a class="display-screen clue" href="#">$100</a>
+        <a class="display-screen clue" href="#">$200</a>
+        <a class="display-screen clue" href="#">$300</a>
+        <a class="display-screen clue" href="#">$400</a>
+        <a class="display-screen clue" href="#">$500</a>
+      </div>
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #4</div>
+        <a class="display-screen clue" href="#">$100</a>
+        <a class="display-screen clue" href="#">$200</a>
+        <a class="display-screen clue" href="#">$300</a>
+        <a class="display-screen clue" href="#">$400</a>
+        <a class="display-screen clue" href="#">$500</a>
+      </div>
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #5</div>
+        <a class="display-screen clue" href="#">$100</a>
+        <a class="display-screen clue" href="#">$200</a>
+        <a class="display-screen clue" href="#">$300</a>
+        <a class="display-screen clue" href="#">$400</a>
+        <a class="display-screen clue" href="#">$500</a>
+      </div>
+      <div class="category-column">
+        <div class="display-screen category" href="#">Category #6</div>
+        <a class="display-screen clue" href="#">$100</a>
+        <a class="display-screen clue" href="#">$200</a>
+        <a class="display-screen clue" href="#">$300</a>
+        <a class="display-screen clue" href="#">$400</a>
+        <a class="display-screen clue" href="#">$500</a>
+      </div>
+    </div>
+    <div id="contestants">
+      <div class="contestant-stand">
+        <div class="contestant">
+          <div class="contestant-name display-screen"> Contestant #1</div>
+          <div class="contestant-score display-screen">$100</div>
+        </div>
+      </div>
+      <div class="contestant-stand">
+        <div class="contestant">
+          <div class="contestant-name display-screen">Contestant #2</div>
+          <div class="contestant-score display-screen">$5500</div>
+        </div>
+      </div>
+      <div class="contestant-stand">
+        <div class="contestant">
+          <div class="contestant-name display-screen">Contestant #3</div>
+          <div class="contestant-score display-screen">$25000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLUE MODAL -->
+  <div id="question-modal" class="show">
+    <div class="question-text">This is a clue.</div>
+  </div>
+
+  <!-- CLUE MODAL -->
+  <div id="controls-modal" class="show">
+    <form class="controls">
+      <h2>DNJ TRIVIA</h2>
+      <p>DNJ Trivia is [D]efinitely [N]ot [J]eopardy, but it's an okay substitute in a pinch.</p>
+      <fieldset>
+        <legend>Select Number of Players:</legend>
+        <input type="radio" id="player-1" name="players" value="1" />
+        <label for="player-1">1</label>
+        <input type="radio" id="player-2" name="players" value="2" />
+        <label for="player-2">2</label>
+        <input type="radio" id="player-3" name="players" value="3" checked />
+        <label for="player-3">3</label>
+      </fieldset>
+      <fieldset>
+        <legend>Who is playing?</legend>
+        <div id="controls-player-1">
+          <label for="player-name-1">Player 1:</label>
+          <input type="text" id="player-name-1" name="player-name-1" value="Player #1" />
+        </div>
+        <div id="controls-player-2">
+          <label for="player-name-2">Player 2:</label>
+          <input type="text" id="player-name-2" name="player-name-2" value="Player #2" />
+        </div>
+        <div id="controls-player-3">
+          <label for="player-name-3">Player 3:</label>
+          <input type="text" id="player-name-3" name="player-name-3" value="Player #3" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>How many seconds does a player have to give an answer?</legend>
+        <input type="number" min="5" max="60" value="30" name="time-to-answer" />
+      </fieldset>
+      <button id="controls-start-btn" type="submit">Start</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

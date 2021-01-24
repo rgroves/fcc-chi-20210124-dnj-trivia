@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+/*******************************************************************************
+*** GAME BOARD
+*******************************************************************************/
+#game-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 5px;
+  overflow: auto;
+  font-size: 1rem;
+}
+
+.category-column {
+  flex: 1 0 10%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}
+
+.display-screen {
+  min-height: 3.5em;
+  max-height: 3.5em;
+  overflow: auto;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  margin: 5px;
+  padding: 0.5em;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px blue;
+  text-decoration: none;
+}
+
+.clue.completed > span {
+  visibility: hidden;
+}
+
+.display-screen:not(:first-child):not(.contestant-score):not(.completed):active,
+.display-screen:not(:first-child):not(.contestant-score):not(.completed):hover {
+  border: 2px solid white;
+}
+
+.clue:nth-child(2) {
+  margin-top: 10px;
+}
+
+.category-column:first-of-type {
+  margin-left: auto;
+}
+
+.category-column:last-of-type {
+  margin-right: auto;
+}
+
+.category {
+  text-transform: uppercase;
+}
+
+/*******************************************************************************
+*** CONTESTANTS
+*******************************************************************************/
+#contestants {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+  margin-top: auto;
+  flex-basis: 200px;
+  overflow: auto;
+  font-size: 1rem;
+}
+
+.contestant-stand {
+  flex: 0 0 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  border-radius: 12px 12px 0 0;
+  border-top: 10px sienna solid;
+  border-right: 10px sienna solid;
+  border-left: 10px sienna solid;
+  border-bottom: 15px saddlebrown solid;
+  margin: 0 5px;
+
+  text-align: center;
+}
+
+.contestant {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 5px burlywood solid;
+  border-radius: 2px 2px 0 0;
+  background-color: burlywood;
+}
+
+.contestant-stand:first-of-type {
+  margin-left: auto;
+}
+
+.contestant-stand:last-of-type {
+  margin-right: auto;
+}
+
+.contestant-name {
+  flex: 0 0 64px;
+  overflow: hidden;
+  font-family: "Lucida Calligraphy", "Lucida Handwriting", "Apple Chancery",
+    cursive;
+  padding: 0 0.25em;
+}
+
+.contestant-score {
+  flex: 1 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25em;
+  padding: 0 0.25em;
+}
+
+/*******************************************************************************
+*** CONTROLS
+*******************************************************************************/
+#controls-modal {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 0%;
+  height: 0%;
+  transition: top 700ms, left 700ms, height 700ms, width 700ms, visibility 700ms;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: blue;
+  color: white;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  visibility: hidden;
+}
+
+#controls-modal button {
+  height: 3em;
+  width: 100%;
+  margin: 1em 0;
+}
+
+#controls-modal.show {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: top 700ms, left 700ms, height 700ms, width 700ms, visibility 700ms;
+  visibility: visible;
+}
+
+#controls-modal > form p,
+#controls-modal > form fieldset {
+  margin-bottom: 0.5em;
+  padding: 0.75em;
+}
+
+#controls-modal > form input {
+  line-height: 1.25em;
+  padding: 0.25em;
+  margin: 0.25em;
+}
+
+#controls-modal > form input[type="radio"]:not(:first-of-type) {
+  margin-left: 2em;
+}
+
+/*******************************************************************************
+*** CLUE MODAL
+*******************************************************************************/
+#question-modal {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 0%;
+  height: 0%;
+  transition: top 700ms, left 700ms, height 700ms, width 700ms, visibility 700ms;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: blue;
+  color: white;
+
+  font-size: 4em;
+  text-align: center;
+  visibility: hidden;
+}
+
+#question-modal.show {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: top 700ms, left 700ms, height 700ms, width 700ms, visibility 700ms;
+  visibility: visible;
+}
+
+.question-text,
+.controls {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.show > .question-text,
+.show > .controls {
+  opacity: 1;
+  transition: opacity 1.5s;
+}
