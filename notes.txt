@@ -1,0 +1,49 @@
+- Remember the objective for today is to practice ways to manipulate/interact
+  with the DOM via JS so even if we don't get through implementing a full on
+  game you can take things you've picked up and take it on as an additional
+  challenge to get this working in it's entirety, if you so wish.
+
+- Game play
+    - For the initial prototype of the game:
+        - Will be a multiplayer (up to 3 players), but single computer game (no network
+          connectivity)
+        - Play will be styled after Jeopardy
+        - Players will "buzz-in" using the keyboard (with each player assigned
+          a key to buzz in)
+        - Initial implementation will have one player act as a host to indicate
+          (via a prompt) if player who buzzed in had correct answer in time (to
+          not disadvantage players who cannot type fast)
+        - Only first two rounds will be implemented (no Final Jeopardy)
+
+    - Future iterations of the game can implement one or more of the following:
+        - accept answer input from the players (instead of needing a player to
+          act as host)
+        - use a server component and something like socket.io to actually have
+          a multiplayer over the web game (instead of needing players to be in
+          same location/at same computer)
+        - Implement some version of Final Jeopardy
+
+- Thinking about the components that make up the game and the functionality
+  needed:
+    - Game Controls/Settings
+        - Collect the configured settings
+        - Set intial game state.
+
+    - Contestant Stands
+        - Show/hide stand
+        - Set Names
+        - Reset score
+        - Adjust scores
+
+    - Game Board
+        - Set Categories
+        - Set Clues
+        - Set Values for clues in each Category
+        - Handling players selection
+            - Showing the clue
+            - Start Buzz-in Timer
+        - Handle players buzzing in
+            - Allow host player to indicate if correct answer
+
+    - Game
+        - Will control the state/flow of the game

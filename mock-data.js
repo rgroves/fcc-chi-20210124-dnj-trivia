@@ -1,3 +1,5 @@
+// The mock data was sourced from https://jservice.io/
+
 let categories = [
   { id: 11532, title: 'let\'s "ch"at', clues_count: 5 },
   { id: 5412, title: "prehistoric times", clues_count: 10 },
